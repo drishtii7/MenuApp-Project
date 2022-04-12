@@ -35,16 +35,16 @@ const Card2 = ({items,loading,onChangeToggle}) => {
         if(result.data.deleted===true)
         {
           setFlag(true);
-          onChangeToggle();// parent child communication
+          onChangeToggle();
 
         }else
         {
           setFlag(false);
-          onChangeToggle();// send msg to parent component state change
+          onChangeToggle();
         }
  }
  const errorAlert = (msg, bool, style) => {
-    setTimeout(() => {// error message remove after 3 seconds
+    setTimeout(() => {
       setFlag(bool);
     }, 5000);
 
@@ -74,11 +74,6 @@ const Card2 = ({items,loading,onChangeToggle}) => {
                             <li className="list-group-item">{item.desc}</li>
                             <li className="list-group-item"> Rs {item.price}</li>
                         </ul>
-                        {/* <div className="d-grid gap-1">
-                                <button className='btn btn-warning' onClick={()=>onEdit(item)}>Edit</button> 
-                                <button className='btn btn-danger ' onClick={()=>onDelete(item._id)}>Delete</button>
-                        </div> */}
-    
                     </div>
     
                 </div>

@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import mystyle from '../CSS/Style';
 import { Grid, Paper, Avatar, Typography, TextField, Button } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link,useNavigate } from 'react-router-dom';
 import validator from 'validator';
 import axios from 'axios';
@@ -29,7 +28,7 @@ const SignIn = () => {
     }
    
     const errorAlert = () => {
-        setTimeout(() => {// error message remove after 3 seconds
+        setTimeout(() => {
             setFlag(false);
         }, 5000);
 
@@ -69,19 +68,19 @@ const SignIn = () => {
                 console.log('token set',result.data.token);
                 navigate('dashboard');
                  
-                console.log("Navigate to Admin page")
+                console.log("Admin Dashboard")
               }else if(result.data.loggedIn && result.data.isAdmin===false)
               {
                 localStorage.setItem('token', result.data.token);
                 navigate('home');
-                console.log("Navigate to Customer page")
+                console.log("User Dashboard")
 
               }else if(result.data.loggedIn===false)
               {
                   setFlag(true);   
               }else
               {
-                  alert("elase part of login check issue");
+                  alert("else part of login check issue");
               }
 
         }catch(error)
@@ -90,80 +89,29 @@ const SignIn = () => {
 
         }
     }
-
-    
-
     return (
         <>
             <Grid>
                 <Paper elevation={10} style={mystyle.paperStyle}>
-
                          {flag?errorAlert():''}
                     <Grid align="center">
-                        {/* <Avatar style={mystyle.avatarStyle}>
-                            <LockOutlinedIcon />
-                        </Avatar> */}
                         <Typography component="h1" variant="h5">Log in</Typography>
                     </Grid>
                     <form onSubmit={handleSubmit}>
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
-                        autoFocus
-                        error={error.email===true}
-                        helperText={error.email===true? 'Please enter valid email !' : ''}                                  
-                        value={inputs.email || ''}
-                        onChange={handleChangeAll}
-                        onKeyUp={emailValidation}
-                    />
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        onChange={handleChangeAll}
-                        // onKeyUp={passwordValidation}
-                        // error={error.passwordError===true}
-                        // helperText={error.passwordError===true? 'Password must be grater than 6 charachter !' : ''}                                                       
-                        autoComplete="current-password"
-                    />
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2 }}
-
-                    >
-                        Sign In
+                    <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus error={error.email===true} helperText={error.email===true? 'Please enter valid email !' : ''} value={inputs.email || ''} onChange={handleChangeAll}  onKeyUp={emailValidation} />
+                    <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" onChange={handleChangeAll} autoComplete="current-password" />
+                    <Button type="submit" fullWidth variant="contained" color="secondary" sx={{ mt: 3, mb: 2 }}> Sign In
                     </Button>
-
                     <Grid container>
-                        {/* <Grid item>
-                            <Link to="#" variant="body1">
-                                Forgot password?
-                            </Link>
-                        </Grid> */}
                         <Grid item>
                             <Link to="/signup" variant="body1" className='btn btn-success'>
-                                {"Register here for new account"}
+                                {"Register here"}
                             </Link>
                         </Grid>
                     </Grid>
                     </form>
                 </Paper>
-
-
             </Grid>
-
-
         </>
     )
 }

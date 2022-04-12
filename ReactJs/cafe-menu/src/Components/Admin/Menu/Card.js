@@ -35,16 +35,16 @@ const Card = ({items,loading,onChangeToggle}) => {
         if(result.data.deleted===true)
         {
           setFlag(true);
-          onChangeToggle();// parent child communication
+          onChangeToggle();
 
         }else
         {
           setFlag(false);
-          onChangeToggle();// send msg to parent component state change
+          onChangeToggle();
         }
  }
  const errorAlert = (msg, bool, style) => {
-    setTimeout(() => {// error message remove after 3 seconds
+    setTimeout(() => {
       setFlag(bool);
     }, 5000);
 

@@ -1,9 +1,9 @@
 import React, { useEffect,useState } from 'react'
 import {  Alert, Stack } from '@mui/material';
 import axios from 'axios';
-import CustomerUpdate from './CustomerUpdate';
+import UserUpdate from './UserUpdate';
 
-const Customer = ({onChangeToggle,users}) => {
+const User = ({onChangeToggle,users}) => {
 
     const [flag,setFlag]=useState(undefined);
     const [isEdit,setEdit]=useState(false);
@@ -91,9 +91,9 @@ const Customer = ({onChangeToggle,users}) => {
 </table>
 
 </div>
-):<CustomerUpdate onChangeState={onChangeState} item={item} onChangeToggle={onChangeToggle}/>
+):<UserUpdate onChangeState={onChangeState} item={item} onChangeToggle={onChangeToggle}/>
 
   )
 }
 
-export default Customer
+export default User

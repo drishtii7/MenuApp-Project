@@ -4,9 +4,7 @@ import ProductInsert from './ProductInsert';
 
 const Dashboard = () => {
     
-    
     return <DashboardContent />
-
   
 }
 

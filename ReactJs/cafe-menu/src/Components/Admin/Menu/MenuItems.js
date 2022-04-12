@@ -41,20 +41,10 @@ const MenuItems = ({ ptype }) => {
     const onChangeToggle=()=>{
         setToggle(!toggle);
     }
-
-    // Get Current Items
-    // const indexOfLastItem=currentPage*itemPerPage;
-    // const indexOfFirstItem=indexOfLastItem-itemPerPage;
-    // const currentItems= items.slice(indexOfFirstItem,indexOfLastItem);
-
-
     return (
         <div className="container">
             {items === true ? console.log("error") : console.log("here", items)}
-            {/* item loading delay it give an error */}
             <Card items={items} loading={loading} onChangeToggle={onChangeToggle} />
-             {/* {           !items?<Pagination itemPerPage={itemPerPage} totalItems={items.length} />:' ' } */}
-
              
         </div>
     )

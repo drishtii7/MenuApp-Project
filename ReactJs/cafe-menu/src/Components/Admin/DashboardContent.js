@@ -174,33 +174,6 @@ function DashboardContent() {
         primary={<Typography type="body2" style={{ backgroundColor: 'purple', color:'white' }}>Add Product</Typography>}
       />
                         </ListItemButton>
-
-
-
-
-                        {/* <ListItemButton onClick={()=>setVisible({'addProduct':false,'customer':true})}>
-                            <ListItemIcon>
-                                <PeopleIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Customers" />
-                        </ListItemButton>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <BarChartIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Reports" />
-                        </ListItemButton> */}
-                        {/* <ListItemButton>
-                            <ListItemIcon>
-                                <LayersIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Integrations" />
-                        </ListItemButton> */}
-
-
-                        {/* {mainListItems} */}
-                        {/* <Divider sx={{ my: 1 }} /> */}
-                        {/* {secondaryListItems} */}
                     </List>
                 </Drawer>
                 <Box
@@ -231,26 +204,6 @@ function DashboardContent() {
                                        {visible.addProduct ? <ProductInsert /> :visible.customer===true?<CustomerDetails/>:visible.productList===true?<ProductList/>:''}
                                 </Paper>
                             </Grid>
-                            {/* Recent Deposits */}
-                            {/* <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: 640,
-                    }}
-                  >
-                    <Deposits />
-                  </Paper>
-                </Grid> */}
-                            {/* Recent Orders */}
-                            {/* <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                    <Orders />
-                  </Paper>
-                </Grid> */}
-
                         </Grid>
                     </Container>
                 </Box>

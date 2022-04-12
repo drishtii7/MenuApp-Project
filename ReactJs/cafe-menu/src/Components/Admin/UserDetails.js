@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Customer from './Customer';
+import User from './User';
 import axios from 'axios';
 
-const CustomerDetails = () => {
+const UserDetails = () => {
     const [users,setUsers]=useState();
     const [toggle,setToggle]=useState(false);
   useEffect(()=>{
@@ -38,9 +38,9 @@ const CustomerDetails = () => {
   return (
     <>
         {/* <h1 align="center">Customer Details</h1> */}
-       {  users!==undefined?<Customer onChangeToggle={onChangeToggle} users={users} />:<h1>Loading...</h1> }      
+       {  users!==undefined?<User onChangeToggle={onChangeToggle} users={users} />:<h1>Loading...</h1> }      
     </>
   )
 }
 
-export default CustomerDetails
+export default UserDetails

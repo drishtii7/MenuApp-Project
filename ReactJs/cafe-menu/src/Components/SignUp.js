@@ -36,8 +36,6 @@ const SignUp = () => {
             setMessage({ 'fname': false })
             console.log("alphabet false")
         }
-
-
     }
     const alphabetValidation2 = () => {
         var letters = /^[A-Za-z]+$/;
@@ -129,32 +127,14 @@ const SignUp = () => {
                         {
                             flag === undefined ? '' : flag === true ? errorAlert("Account Successfully Created !", undefined, 'success') : errorAlert('Please enter correct mobile number or email !', undefined, 'error')
                         }
-                        {/* <Avatar style={mystyle.avatarStyle}>
-                            <LockOutlinedIcon />
-                        </Avatar> */}
-                        {/* <Typography component="h1" variant="h5">Sign up</Typography> */}
                         <h2>Register Here</h2>
                         <br />
                         <br />
                     </Grid>
                     <form onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
-
                             <Grid item>
-                                <TextField
-                                    autoComplete="given-name"
-                                    name="fname"
-                                    error={error.fname === false}
-                                    helperText={error.fname === false ? 'Please enter only alphabet !' : ''}
-                                    value={inputs.fname || ""}
-                                    onChange={handleChangeAll}
-                                    onKeyUp={alphabetValidation}
-                                    required
-                                    fullWidth
-                                    id="fName"
-                                    label="FirstName"
-                                    autoFocus
-                                />
+                                <TextField autoComplete="given-name" name="fname" error={error.fname === false} helperText={error.fname === false ? 'Please enter only alphabet !' : ''} value={inputs.fname || ""} onChange={handleChangeAll} onKeyUp={alphabetValidation} required fullWidth id="fName" label="FirstName" autoFocus/>
                             </Grid>
                             <Grid item xs={12} sm={6}>
                                 <TextField
@@ -172,10 +152,7 @@ const SignUp = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <TextField
-                                    required
-                                    fullWidth
-                                    id="phone"
+                                <TextField required fullWidth id="phone"
                                     label="Contact"
                                     name="mobile_no"
                                     value={inputs.mobile_no || ''}

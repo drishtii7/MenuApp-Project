@@ -8,7 +8,7 @@ const ProductInsert = () => {
 
   const [file, setFile] = useState();
   const [flag, setFlag] = useState(undefined);
-  const nameOfMenu = ['Pizza', 'Burgers', 'Beverage']
+  const nameOfMenu = ['Starter', 'Routine', 'Beverage']
   const [inputs, setInputs] = useState({});
   const navigate=useNavigate();
 
@@ -126,7 +126,6 @@ const ProductInsert = () => {
             />
             <TextField
               margin="normal"
-              required
               fullWidth
               id="desc"
               label="Product Description"

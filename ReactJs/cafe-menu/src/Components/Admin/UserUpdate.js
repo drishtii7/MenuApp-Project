@@ -3,7 +3,7 @@ import mystyle from '../CSS/Style';
 import { Grid, Paper, Alert, Stack, Typography, TextField, Button, MenuItem, Select, InputLabel } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-const CustomerUpdate = ({onChangeState,item,onChangeToggle}) => {
+const UserUpdate = ({onChangeState,item,onChangeToggle}) => {
     
     const [flag, setFlag] = useState(undefined);
     const [inputs, setInputs] = useState(item);
@@ -184,4 +184,4 @@ const CustomerUpdate = ({onChangeState,item,onChangeToggle}) => {
   </div>  )
 }
 
-export default CustomerUpdate
+export default UserUpdate

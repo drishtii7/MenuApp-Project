@@ -8,7 +8,7 @@ const UpdateProduct = ({onChangeState,item,onChangeToggle}) => {
 
   const [file, setFile] = useState();
   const [flag, setFlag] = useState(undefined);
-  const nameOfMenu = ['Pizza', 'Burgers', 'Drinks']
+  const nameOfMenu = ['Starter', 'Routine', 'Beverage']
   const [inputs, setInputs] = useState(item);
   const navigate=useNavigate();
 
@@ -29,7 +29,7 @@ const UpdateProduct = ({onChangeState,item,onChangeToggle}) => {
   }
 
   const errorAlert = (msg, bool, style) => {
-    setTimeout(() => {// error message remove after 3 seconds
+    setTimeout(() => {
       setFlag(bool);
     }, 5000);
 
@@ -52,7 +52,6 @@ const UpdateProduct = ({onChangeState,item,onChangeToggle}) => {
     formData.append('ptype', inputs.ptype);
     formData.append('file', inputs.file);
      console.log(formData);
- //  alert(JSON.stringify(formData));
     updateProduct(formData);
 
   }
@@ -73,30 +72,16 @@ const UpdateProduct = ({onChangeState,item,onChangeToggle}) => {
          navigate('/')
       }
       if (result.data.updated === true) {
-        //    inputs.pname='';
-        //    inputs.price='';
-        //    inputs.ptype='';
-        //    inputs.desc='';
            setFlag(true);
-
            onChangeState();
            onChangeToggle();
       } else 
       { 
-    //   inputs.pname='';
-    //   inputs.price='';
-    //   inputs.ptype='';
-    //   inputs.desc='';
        setFlag(false);
       
       }
 
     } catch (error) {
-
-    //   inputs.pname='';
-    //   inputs.price='';
-    //   inputs.ptype='';
-    //   inputs.desc='';
       setFlag(false);
       navigate('/')
       console.error("error in insert product function");
@@ -135,7 +120,6 @@ const UpdateProduct = ({onChangeState,item,onChangeToggle}) => {
             />
             <TextField
               margin="normal"
-              required
               fullWidth
               id="desc"
               label="Product Description"
@@ -203,16 +187,9 @@ const UpdateProduct = ({onChangeState,item,onChangeToggle}) => {
             >
               Update
             </Button>
-
-
           </form>
         </Paper>
-
-
       </Grid>
-
-
-
     </div>
   )
 }
